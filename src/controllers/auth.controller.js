@@ -9,7 +9,7 @@ async function cacheUser(user) {
 
 async function register(req, res) {
   try {
-    const { email, password, role } = req.body;
+    const { email, password, role: providedRole } = req.body;
 
     if (!email || !password) {
       return res.status(400).json({ msg: "Email and password are required." });
@@ -20,7 +20,9 @@ async function register(req, res) {
       return res.status(409).json({ msg: "User exists!" });
     }
 
+    const role = providedRole && providedRole.toLowerCase() === "admin" ? "admin" : "user";
     const user = new userModel({ email, password, role });
+
     await user.save();
 
     await cacheUser(user);
@@ -38,7 +40,6 @@ async function register(req, res) {
       msg: "User registered!",
       user: { email: user.email, role: user.role, _id: user._id },
     });
-
   } catch (error) {
     console.error("Register error:", error);
     return res.status(500).json({ msg: "Internal server error" });
@@ -80,15 +81,14 @@ async function login(req, res) {
 const logout = async (req, res) => {
   try {
     const token = req.cookies.token;
-    if(token){
+    if (token) {
       await redis.set(`blacklist:${token}`, "true", "EX", 60 * 60 * 24);
-      res.clearCookie("token")
+      res.clearCookie("token");
     }
-    res.status(200).json({ message: 'Logged out successfully' });
-    
+    res.status(200).json({ message: "Logged out successfully" });
   } catch (error) {
-    res.status(500).json({ message: 'Internal Server Error' });
+    res.status(500).json({ message: "Internal Server Error" });
   }
-}
+};
 
 module.exports = { register, login, logout };
