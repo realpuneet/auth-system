@@ -1,0 +1,4 @@
+{"level":"info","message":"Logger initialized successfully","timestamp":"2025-11-02T17:46:23.769Z"}
+{"level":"warn","message":"This is a warning message","timestamp":"2025-11-02T17:46:23.775Z"}
+{"level":"error","message":"This is an error message","timestamp":"2025-11-02T17:46:23.775Z"}
+{"level":"warn","message":"Validation failed: %o","timestamp":"2025-11-02T17:50:39.409Z"}

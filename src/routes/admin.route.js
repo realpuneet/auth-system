@@ -1,10 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const {
-  authentication,
-  authorize,
-  authenticate,
-} = require("../middlewares/auth");
+const { authorize, authenticate } = require("../middlewares/auth");
 
 router.get("/getdata", authenticate, authorize("admin"), (req, res) => {
   res.status(200).json({

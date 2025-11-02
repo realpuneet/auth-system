@@ -8,10 +8,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use("/api/auth", authRouter);
-
-
 app.use("/api/auth/admin", adminRouter);
-
 
 
 module.exports = app;
