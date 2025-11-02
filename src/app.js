@@ -10,7 +10,7 @@ app.use(cookieParser());
 app.use("/api/auth", authRouter);
 
 
-app.use("/admin", adminRouter);
+app.use("/api/auth/admin", adminRouter);
 
 
 
