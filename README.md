@@ -11,7 +11,7 @@ This setup includes **JWT authentication**, **cookie-based sessions**, **role-ba
 - **Cache/Session:** Redis (ioredis)
 - **Validation:** Joi
 - **Auth:** JWT + Cookie
-- **Logger:** Custom utility (console wrapper)
+- **Logger:** Custom utility (Winston)
 
 ---
 
