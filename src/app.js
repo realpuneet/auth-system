@@ -16,4 +16,8 @@ app.use("/api/auth", authRouter);
 app.use("/api/auth/admin", adminRouter);
 
 
+app.get("/",(req,res)=>{
+    res.send("Auth system API is running...");
+})
+
 module.exports = app;

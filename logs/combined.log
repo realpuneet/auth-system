@@ -6,3 +6,5 @@
 {"level":"warn","message":"Unauthorized role access attempt: %s required=%o user=%o","timestamp":"2025-11-02T19:28:45.273Z"}
 {"level":"warn","message":"Unauthorized role access attempt: %s required=%o user=%o","timestamp":"2025-11-02T19:41:27.269Z"}
 {"level":"warn","message":"Unauthorized role access attempt: %s required=%o user=%o","timestamp":"2025-11-02T19:41:56.094Z"}
+{"level":"warn","message":"Validation failed: %o","timestamp":"2025-11-03T05:52:15.145Z"}
+{"level":"warn","message":"Validation failed: %o","timestamp":"2025-11-03T05:55:18.874Z"}

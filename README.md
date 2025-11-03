@@ -60,3 +60,16 @@ POST → /api/auth/logout
 #Admin-only Route
 GET → /api/auth/admin/getdata
 ## Works only if the logged-in user has role: admin
+
+## If user without admin role tries to access 
+{
+  "msg": "Access denied. Insufficient permissions."
+}
+
+##
+logs/
+ ── error.log         # Error-level logs
+ ── combined.log      # All logs
+ ── exceptions.log    # Uncaught exceptions
+ ── rejections.log    # Unhandled promise rejections
+
