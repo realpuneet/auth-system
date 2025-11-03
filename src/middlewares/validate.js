@@ -17,7 +17,7 @@ const validate = (schema) => {
           path: d.path,
         })),
       });
-    }
+    } 
 
     req.body = result.value;
     next();
